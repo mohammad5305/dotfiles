@@ -42,7 +42,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+q kill
@@ -98,7 +98,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -202,21 +202,21 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 # bar
- bar {
-  	status_command /usr/bin/bumblebee-status \
- 	-m disk memory network_traffic cpu pasink time \
- 	-t dracula-powerline # brightness for volume brightness
-  	position top
- 	font pango:awesome 9 
- 	colors {
- 		background $bg-color
- 	    	separator #757575
-		#                  border             background         text
- 		focused_workspace  $bg-color          $bg-color          $text-color
- 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
- 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
- 	}
- }
+# bar {
+#   	status_command /usr/bin/bumblebee-status \
+#  	-m disk memory network_traffic cpu pasink time \
+#  	-t dracula-powerline # brightness for volume brightness
+#   	position top
+#  	font pango:awesome 9 
+#  	colors {
+#  		background $bg-color
+#  	    	separator #757575
+# 		#                  border             background         text
+#  		focused_workspace  $bg-color          $bg-color          $text-color
+#  		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#  		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#  	}
+#  }
 
 # lock screen
 bindsym ctrl+$mod+l exec i3lock --color "$bg-color" && systemctl suspend
@@ -230,8 +230,6 @@ exec_always bash $HOME/.fehbg
 
 # change language
 exec_always "setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle"
-# shutdown shortcuts
-bindsym $mod+Shift+s exec systemctl poweroff 
 # take screenshot
 bindsym Print exec gnome-screenshot
 # file manager 
@@ -239,5 +237,26 @@ bindsym $mod+x exec termite -e ranger
 bindsym $mod+z exec termite -e nnn
 # solve problem
 exec lxpolkit
-# picom
-exec picom -f --experimental-backend -b &
+# gaps
+gaps inner 6
+gaps outer 5
+
+# polybar 
+exec_always --no-startup-id $HOME/.config/polybar/cuts/launch.sh 
+# hide window title
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
+# opacity change
+exec compton
+
+#vim
+bindsym $mod+v exec st -e nvim
+
+# mpd
+exec mpd --no-daemon --stdout --verbose
+
+# ncmpcpp
+bindsym $mod+n exec st -e ncmpcpp
+
+# for shift tab
+exec xmodmap -e 'keycode 23 = Tab'
