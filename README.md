@@ -1,11 +1,11 @@
 # dotfiles
 requirements : 
-    st,
-    polybar,
-    rofi,
-    feh,
-    lxsession,
-    compton,
+    - st
+    - polybar
+    - rofi
+    - feh
+    - lxsession
+    - compton
     
     
  
