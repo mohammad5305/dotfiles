@@ -37,4 +37,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'szw/vim-maximizer'
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'tweekmonster/startuptime.vim'
+    Plug 'mhinz/vim-startify'
 call plug#end()
