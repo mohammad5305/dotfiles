@@ -7,6 +7,7 @@ requirements :
 - feh
 - lxsession
 - compton
+- mpd
     
     
  
