@@ -44,6 +44,7 @@ nnoremap <C-l> :NERDTreeToggle <CR>
 " shortcut for comment
 nnoremap <C-_> :Commentary <CR>
 vnoremap <C-_> :Commentary <CR>
+inoremap <C-_> <ESC>:Commentary <CR>
 
 " autoformat
 let g:python3_host_prog="/bin/python"

@@ -38,4 +38,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'tweekmonster/startuptime.vim'
     Plug 'mhinz/vim-startify'
+    Plug 'dense-analysis/ale'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'pechorin/any-jump.vim'
+    Plug '907th/vim-auto-save'
 call plug#end()

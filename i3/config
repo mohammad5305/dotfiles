@@ -233,8 +233,8 @@ exec_always "setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_sh
 # take screenshot
 bindsym Print exec gnome-screenshot
 # file manager 
-bindsym $mod+x exec termite -e ranger
-bindsym $mod+z exec termite -e nnn
+bindsym $mod+x exec st -e ranger
+bindsym $mod+z exec st -e nnn
 # solve problem
 exec lxpolkit
 # gaps
@@ -260,3 +260,10 @@ bindsym $mod+n exec st -e ncmpcpp
 
 # for shift tab
 exec xmodmap -e 'keycode 23 = Tab'
+
+# for music
+bindsym $mod+Shift+n exec mpc next
+bindsym $mod+Shift+p exec mpc prev
+
+# dunst 
+exec dunst

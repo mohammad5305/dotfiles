@@ -10,17 +10,6 @@ luafile ~/.config/nvim/plug/treesitter.lua
 
 " colorscheme gruvbox
 
-
-" lua 
-lua << EOF
--- require'lspconfig'.python.setup{on_attach=require'completion'.on_attach}
--- require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
--- for galexy
-EOF
-
-
-
-" theme
 " configure treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
