@@ -48,28 +48,29 @@ let g:wakatime_PythonBinary = '/usr/bin/python'  " (Default: 'python')
 
 
 " python
-lua << EOF
-O = {
-    auto_close_tree = 0,
-    auto_complete = true,
-    colorscheme = 'lunar',
-    hidden_files = true,
-    wrap_lines = false,
-    number = true,
-    relative_number = true,
-    shell = 'bash',
-    timeoutlen = 100,
-    nvim_tree_disable_netrw = 0, -- "1 by default, disables netrw (must be set before plugin's packadd)
-     python = {
-        linter = '',
-        -- @usage can be 'yapf', 'black'
-        formatter = '',
-        autoformat = false,
-        isort = false,
-        diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
-		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
-    },
-EOF
+" lua << EOF
+" O = {
+"     auto_close_tree = 0,
+"     auto_complete = true,
+"     colorscheme = 'lunar',
+"     hidden_files = true,
+"     wrap_lines = false,
+"     number = true,
+"     relative_number = true,
+"     shell = 'bash',
+"     timeoutlen = 100,
+"     nvim_tree_disable_netrw = 0, -- "1 by default, disables netrw (must be set before plugin's packadd)
+"      python = {
+"         linter = '',
+"         -- @usage can be 'yapf', 'black'
+"         formatter = '',
+"         autoformat = false,
+"         isort = false,
+"         diagnostics = {virtual_text = {spacing = 0, prefix = ""}, signs = true, underline = true},
+" 		analysis = {type_checking = "basic", auto_search_paths = true, use_library_code_types = true}
+"     },
+  
+" EOF
 
 
 " buffers
@@ -91,20 +92,10 @@ let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debu
 " polygot
 " let g:polyglot_disabled = ['markdown, rust, c++, c']
 
+" scrol
+set scrolloff=3
 " startify
-let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"}]
-" let g:startify_custom_header = [
-"       \ '',
-"       \ '                       __         _    _        _    _      _         _      ',
-"       \ '                      / /    ___ | |_ ( ) ___  | |_ | |__  (_) _ __  | | __  ',
-"       \ '                     / /    / _ \| __||/ / __| | __|| |_ \ | || |_ \ | |/ /  ',
-"       \ '                    / /___ |  __/| |_    \__ \ | |_ | | | || || | | ||   <   ',
-"       \ '                    \____/  \___| \__|   |___/  \__||_| |_||_||_| |_||_|\_\  ',
-"       \ '                                                                             ',
-"       \ '                                 [ ThinkVim   Author:taigacute ]             ',
-"       \ '',
-"       \ ]
-
+let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"},  {"t" : "~/code/python/test.py"}]
 let s:header = [
       \ '',
    \ '██████  ██    ██ ███████ ███████ ██    ██     ██    ██ ██ ███    ███ ',
@@ -128,5 +119,4 @@ function! s:center(lines) abort
 endfunction
 let g:startify_custom_header = s:center(s:header)
 let g:startify_padding_left = 5
-
 
