@@ -16,8 +16,6 @@ requirements :
   
  bumblebee-status only need for using i3bar if you want to use polybar it not Necessary
 
- nvim config use some config of lunarvim 
-
 
  ![image](./wallpaper/dotfiles-1.png)
  ![image](./wallpaper/dotfiles-2.png)
