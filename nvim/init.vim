@@ -35,6 +35,7 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'sheerun/vim-polyglot'
     Plug 'rhysd/vim-grammarous'
     Plug 'skanehira/preview-markdown.vim'
+    Plug '907th/vim-auto-save'
     " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
     Plug 'voldikss/vim-browser-search'
     Plug 'sbdchd/neoformat'
@@ -101,6 +102,13 @@ nnoremap <C-A-f> :Neoformat<CR>
 " telescope find_files
 nnoremap <silent><Leader>t :Telescope find_files <CR>
 
+" enable AutoSave on Vim startup
+let g:auto_save = 0
+augroup ft_python
+  au!
+  au FileType python let b:auto_save = 1
+augroup END
+
 " >> Lsp key bindings
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -114,7 +122,6 @@ nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
-nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 
 
 " compelte config
