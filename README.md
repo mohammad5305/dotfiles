@@ -8,7 +8,7 @@ requirements :
 - lxsession
 - compton
 - mpd
-- neovim
+- neovim + vim-plug
     
     
  
