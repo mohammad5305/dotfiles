@@ -22,7 +22,7 @@ requirements :
 ## nvim 
  ![image](./wallpaper/dotfiles-3.png)
 
- Install vim plug for manage plugins and do `{:PlugInstll}`
+ Install vim plug for manage plugins and do `:PlugInstall`
 
 ### key mapping
 leader key in my config is comma ','
@@ -40,4 +40,4 @@ leader key in my config is comma ','
 | ctrl + alt + f    | format with neoformat    |
 | leader + s        | search word under cursor |
 | leader + n        | open new buffer          |
-| ctrl+l            | open nerd tree           |
+| ctrl + l          | open nerd tree           |
