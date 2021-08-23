@@ -1,4 +1,4 @@
-st.alpha: .8
+st.alpha: .9
 st.font:	JetBrainsMono-Bold:pixelsize=15:antialias=true:autohint=true;
 rofi.color-enabled: true
 rofi.color-window: #2e3440, #2e3440, #2e3440
@@ -65,7 +65,7 @@ rofi.modi: run
 /* ! special */
 /* *.foreground:   #c6c6c6 */
 /* *.background:   #0a2332 */
-/* *.cursorColor:  #c6c6c6 */
+/* *.cursorColor:  #cc6c6 */
 
 /* ! black */
 /* *.color0:       #122734 */
