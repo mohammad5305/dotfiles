@@ -9,13 +9,11 @@ requirements :
 - compton
 - mpd
 - neovim + vim-plug
-    
-    
+- zsh
+
  
  font : awesome, nerd, JetBrains(for st)
-  
- bumblebee-status only need for using i3bar if you want to use polybar it not Necessary
-
+ 
 
  ![image](./wallpaper/dotfiles-1.png)
  ![image](./wallpaper/dotfiles-2.png)
