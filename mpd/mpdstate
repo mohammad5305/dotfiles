@@ -1,9 +1,9 @@
-sw_volume: 96
+sw_volume: 100
 audio_device_state:1:pulse
 audio_device_state:1:Visualizer feed
-state: pause
-current: 3
-time: 158.651000
+state: play
+current: 0
+time: 57.942000
 random: 1
 repeat: 1
 single: 0
@@ -12,15 +12,28 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:ed-sheeran-bad-habits.mp3
-1:The-Weeknd-Blinding-Lights-320.mp3
-2:Jesse Cook - Virtue.mp3
-3:Two Figures.mp3
-4:Ohne Dich (@Mezzrrab)-Rammstein _ @Mezzrrab.mp3
-5:01 Aaron Smith - Dancin (Krono Remix).mp3
-6:03) Re Mida,Matthew Adam - Fields of Purple.mp3
-7:01. Hurricanes.mp3
-8:Nachtreich - Lights.mp3
-9:like you do slowed reverb  - joji.mp3
-10:Joe_Cocker_Summer_In_The_City.hd.mp3
+0:Goner.mp3
+1:Jesse Cook - Virtue.mp3
+2:oscar_and_the_wolf.mp3
+3:Ohne Dich (@Mezzrrab)-Rammstein _ @Mezzrrab.mp3
+4:FINNEAS-A-Concert-Six-Months-From-Now.mp3
+5:The-Weeknd-Blinding-Lights-320.mp3
+6:ANATOMY-OF-LIGHT.mp3
+7:ed-sheeran-bad-habits.mp3
+8:Jack Savoretti - Breaking the Rules.mp3
+9:Hozier-BetterLove.mp3
+10:01 Aaron Smith - Dancin (Krono Remix).mp3
+11:Dire_Straits_Sultans_Of_Swing.hd.mp3
+12:03) Re Mida,Matthew Adam - Fields of Purple.mp3
+13:Rag n Bone-Man-Human-320.mp3
+14:Regard-Ride-it.mp3
+15:04.Path-3-(7676).mp3
+16:01. Hurricanes.mp3
+17:Bruno-Mars-Talking-to-the-Moon.mp3
+18:Living-Life,In-The-Night-Cheriimoya.mp3
+19:01-Alec-Benjamin-Let-Me-Down-Slowly.mp3
+20:Duncan-Laurence-Love Dont-Hate-It.mp3
+21:like you do slowed reverb  - joji.mp3
+22:Bon-Jovi-Real-Love-320.mp3
+23:fismoll_-_look_at_this_2.mp3
 playlist_end

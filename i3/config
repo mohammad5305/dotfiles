@@ -214,7 +214,7 @@ bindsym $mod+r mode "resize"
 #  	-m disk memory network_traffic cpu pasink time \
 #  	-t dracula-powerline # brightness for volume brightness
 #   	position top
-#  	font pango:awesome 9 
+#  	font pango:awesome 10
 #  	colors {
 #  		background $bg-color
 #  	    	separator #757575
@@ -243,18 +243,14 @@ exec_always "setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_sh
 bindsym Print exec gnome-screenshot
 
 # file manager 
-bindsym $mod+x exec st -e ranger
-bindsym $mod+z exec st -e nnn
+bindsym $mod+x exec st ranger
+bindsym $mod+z exec st nnn
 
 # solve problem
 exec lxpolkit
 
-# gaps
-gaps inner 5
-gaps outer 1
-
 # polybar 
-exec_always --no-startup-id $HOME/.config/polybar/cuts/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # hide window title
 for_window [class="^.*"] border pixel 1
@@ -264,7 +260,7 @@ new_window 1pixel
 exec compton
 
 #vim
-bindsym $mod+v exec terminator -e nvim
+bindsym $mod+v exec st -e nvim
 
 # mpd
 exec mpd --no-daemon --stdout --verbose
@@ -283,13 +279,12 @@ bindsym $mod+Shift+p exec mpc prev
 exec dunst
 
 # brightness shortcut
-# bindsym XF86MonBrightnessUp exec --no-startup-id bash -c 'b=$(xrandr --verbose | grep -i brightness | head -n 1 | cut -d" " -f2) && b2=$(echo -e "import math\nf = lambda x: (1 - 1/(1+math.exp(4*x-2)))\nprint(\\\"%.2f\\\" % f(0.1+$b))" | python) && xrandr --output LVDS1 --brightness $b2'
-# bindsym XF86MonBrightnessDown exec --no-startup-id bash -c 'b=$(xrandr --verbose | grep -i brightness | head -n 1 | cut -d" " -f2) && b2=$(echo -e "import math\nf = lambda x: (1 - 1/(1+math.exp(4*x-2)))\nprint(\\\"%.2f\\\" % f(-0.1+$b))" | python) && xrandr --output LVDS1 --brightness $b2'
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym  XF86MonBrightnessUp    exec  xbacklight  -inc  20  #  increase  screen  brightness
+bindsym  XF86MonBrightnessDown  exec  xbacklight  -dec  20  #  decrease  screen  brightness
 
 # reminder
 exec_always python /mnt/myhard/code/python/reminder/sender.py
 
 # easy translate
 bindsym $mod+Shift+t exec python /mnt/myhard/code/python/translator/translateor.py
+

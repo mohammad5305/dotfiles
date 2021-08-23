@@ -7,51 +7,61 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'joshdick/onedark.vim'
     " snippet
     Plug 'hrsh7th/nvim-compe'
-    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/vim-vsnip' 
     Plug 'hrsh7th/vim-vsnip-integ'
     " buffer stuff
-    Plug 'romgrk/barbar.nvim'
+    " Plug 'romgrk/barbar.nvim'
     Plug 'rbgrouleff/bclose.vim'
+    Plug 'ap/vim-buftabline'
     " lsp
     Plug 'kabouzeid/nvim-lspinstall'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
     Plug 'glepnir/lspsaga.nvim' 
     " File Explorer
     Plug 'scrooloose/NERDTree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
     Plug 'mcchrish/nnn.vim'
     " telescope stuff
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    " status line
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     " other stuff
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-commentary'
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'mhinz/vim-startify'
     Plug 'dense-analysis/ale'
     Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'lepture/vim-jinja'
     Plug 'sheerun/vim-polyglot'
     Plug 'rhysd/vim-grammarous'
-    Plug 'skanehira/preview-markdown.vim'
     Plug '907th/vim-auto-save'
-    " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
     Plug 'voldikss/vim-browser-search'
     Plug 'sbdchd/neoformat'
+    Plug 'tpope/vim-sensible'
+    Plug 'szw/vim-maximizer'
+    Plug 'gryf/pylint-vim'
+    Plug 'alvan/vim-closetag'
+    " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
 call plug#end() 
 
 luafile ~/.config/nvim/lsp.lua
 luafile ~/.config/nvim/completion.lua
 luafile ~/.config/nvim/galaxyline.lua
+luafile ~/.config/nvim/treesitter.lua
 
 " normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+" sensible
+runtime! plugin/sensible.vim
+
 " setting 
 let mapleader=','
-set scrolloff=3
+set scrolloff=5
 set shortmess+=c
 syntax on
 set laststatus=2                        
@@ -60,6 +70,10 @@ set noswapfile
 set backspace=indent,eol,start 
 set autoindent
 set shiftwidth=4
+set nohls
+set splitbelow
+set termguicolors
+
 " mouse and clipboard
 set mouse=a
 set clipboard=unnamedplus
@@ -79,6 +93,13 @@ set expandtab
 " refresh
 nnoremap <silent> <F5> :source % <CR>
 
+" python terminal
+nnoremap <F10> :split term://python % <CR>
+nnoremap <F11> :split term://zsh <CR>
+
+" pylint 
+nnoremap <F2> :!pylint %\|sed "s/^\(\w*\):\s*\([0-9]\+\)/%:\2:\ \1:\ /g" <CR>
+
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
@@ -86,7 +107,7 @@ vnoremap > >gv
 " buffer stuff
 nnoremap <tab> :bnext<CR>
 nnoremap <S-tab> :bprev<CR>
-nnoremap <Leader>n :enew<CR>
+nnoremap <Leader>o :enew<CR>
 nnoremap <Leader>w :Bclose<CR>
 
 " for complete
@@ -102,6 +123,9 @@ nnoremap <C-A-f> :Neoformat<CR>
 " telescope find_files
 nnoremap <silent><Leader>t :Telescope find_files <CR>
 
+" closetag 
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
 " enable AutoSave on Vim startup
 let g:auto_save = 0
 augroup ft_python
@@ -111,7 +135,6 @@ augroup END
 
 " >> Lsp key bindings
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K     <cmd>Lspsaga hover_doc<CR>
@@ -123,31 +146,20 @@ nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 
+" toggle maximzer
+nnoremap <silent><A-m> :MaximizerToggle<CR>
+inoremap <silent><A-m>:MaximizerToggle<CR>
 
-" compelte config
-let g:compe = {}
-let g:compe.enabled = v:true
-let g:compe.autocomplete = v:true
-let g:compe.debug = v:false
-let g:compe.min_length = 1
-let g:compe.preselect = 'enable'
-let g:compe.throttle_time = 80
-let g:compe.source_timeout = 200
-let g:compe.resolve_timeout = 800
-let g:compe.incomplete_delay = 400
-let g:compe.max_abbr_width = 100
-let g:compe.max_kind_width = 100
-let g:compe.max_menu_width = 100
-let g:compe.documentation = v:true
+" nice maps 
+nnoremap Y y$
 
-let g:compe.source = {}
-let g:compe.source.path = v:true
-let g:compe.source.buffer = v:true
-let g:compe.source.calc = v:true
-let g:compe.source.nvim_lsp = v:true
-let g:compe.source.nvim_lua = v:true
-let g:compe.source.vsnip = v:true
-let g:compe.source.emoji = v:true
+" nice moving 
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
 
 " nnn
 " Opens the n³ window in a split
@@ -157,9 +169,9 @@ let g:nnn#layout = 'new' " or vnew, tabnew etc.
 let g:nnn#layout = { 'left': '~20%' } " or right, up, down
 
 " Floating window (neovim latest and vim with patch 8.2.191)
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
 " shortcut for nnn
-nnoremap nnn :Np <CR>
+nnoremap <Leader>n:Np <CR>
 
 "shortcut for nerdtree
 nmap <C-l> :NERDTreeToggle<CR>
@@ -169,7 +181,7 @@ vnoremap <C-_> :Commentary <CR>
 inoremap <C-_> <ESC>:Commentary <CR>
 
  " startify
-let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"},  {"t" : "~/code/python/test.py"}]
+ let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"},  {"t" : "/tmp/test.py"}, {"z" : "~/.config/zsh/.zshrc"}, {"T" : "~/code/python/test.py"}]
 let s:header = [
       \ '',
    \ '██████  ██    ██ ███████ ███████ ██    ██     ██    ██ ██ ███    ███ ',
