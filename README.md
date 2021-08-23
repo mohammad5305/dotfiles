@@ -39,3 +39,12 @@ leader key in my config is comma ','
 | leader + s        | search word under cursor |
 | leader + n        | open new buffer          |
 | ctrl + l          | open nerd tree           |
+
+
+## zsh 
+Put this into your ~/.xprofile or ~/.profile
+```
+export ZDOTDIR=$HOME/.config/zsh
+export LC_CTYPE=en_US.UTF-8
+```
+
