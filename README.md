@@ -30,7 +30,7 @@ leader key in my config is comma ','
 | key map           | Description              |
 |-------------------|--------------------------|
 | jk, kj            | exit from normal mode    |
-| tab , shift + tab | siwtch between buffers   |
+| tab , shift + tab | switch between buffers   |
 | leader + t        | open Telescope           |
 | leader + w        | close buffer             |
 | ctrl + /          | comment toggle           |
