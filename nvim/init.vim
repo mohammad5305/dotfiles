@@ -10,7 +10,6 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'hrsh7th/vim-vsnip' 
     Plug 'hrsh7th/vim-vsnip-integ'
     " buffer stuff
-    " Plug 'romgrk/barbar.nvim'
     Plug 'rbgrouleff/bclose.vim'
     Plug 'ap/vim-buftabline'
     " lsp
@@ -36,14 +35,13 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'lepture/vim-jinja'
     Plug 'sheerun/vim-polyglot'
-    Plug 'rhysd/vim-grammarous'
     Plug '907th/vim-auto-save'
-    Plug 'voldikss/vim-browser-search'
     Plug 'sbdchd/neoformat'
     Plug 'tpope/vim-sensible'
     Plug 'szw/vim-maximizer'
     Plug 'gryf/pylint-vim'
     Plug 'alvan/vim-closetag'
+    Plug 'tweekmonster/startuptime.vim'
     " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
 call plug#end() 
 
@@ -73,9 +71,9 @@ set shiftwidth=4
 set nohls
 set splitbelow
 set termguicolors
+set nowrap
 
-" mouse and clipboard
-set mouse=a
+" clipboard
 set clipboard=unnamedplus
 
 " line number
@@ -113,10 +111,6 @@ nnoremap <Leader>w :Bclose<CR>
 " for complete
 set completeopt=menuone,noselect
 
-" search faster 
-nmap <silent> <Leader>s <Plug>SearchNormal
-vmap <silent> <Leader>s <Plug>SearchVisual
-
 " neoformat map
 nnoremap <C-A-f> :Neoformat<CR>
 
@@ -148,7 +142,6 @@ xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 
 " toggle maximzer
 nnoremap <silent><A-m> :MaximizerToggle<CR>
-inoremap <silent><A-m>:MaximizerToggle<CR>
 
 " nice maps 
 nnoremap Y y$
@@ -166,10 +159,10 @@ nnoremap <leader>j :m .+1<CR>==
 let g:nnn#layout = 'new' " or vnew, tabnew etc.
 
 " Or pass a dictionary with window size
-let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+let g:nnn#layout = { 'left': '~20%' } " or right, up, down 
 
 " Floating window (neovim latest and vim with patch 8.2.191)
-let g:nnn#layout = { 'window': { 'width': 0.6, 'height': 0.6, 'highlight': 'Debug' } }
+let g:nnn#layout = { 'window': { 'width': 0.4, 'height': 0.7, 'highlight': 'Debug' } }
 " shortcut for nnn
 nnoremap <Leader>n:Np <CR>
 

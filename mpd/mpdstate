@@ -2,10 +2,10 @@ sw_volume: 100
 audio_device_state:1:pulse
 audio_device_state:1:Visualizer feed
 state: play
-current: 0
-time: 57.942000
+current: 13
+time: 75.885000
 random: 1
-repeat: 1
+repeat: 0
 single: 0
 consume: 0
 crossfade: 0
@@ -36,4 +36,9 @@ playlist_begin
 21:like you do slowed reverb  - joji.mp3
 22:Bon-Jovi-Real-Love-320.mp3
 23:fismoll_-_look_at_this_2.mp3
+24:Doja-Cat-Kiss-Me-More-(feat.SZA).mp3
+25:P!nk-Cover-Me-In-Sunshine.mp3
+26:01AURORA-Runaway.mp3
+27:doll-shrimp.mp3
+28:Last-Day.mp3
 playlist_end
