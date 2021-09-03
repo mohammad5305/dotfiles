@@ -31,9 +31,6 @@ alias vpn-off="sudo protonvpn d"
 alias dns-g="echo nameserver 8.8.8.8 | sudo tee -a /etc/resolv.conf"
 alias dns-c="echo nameserver 4.2.2.4 | sudo tee -a /etc/resolv.conf"
 
-# nnn onedark
-BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
-export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 
 # subsearch
 bindkey '^[[A' history-substring-search-up

@@ -1,0 +1,12 @@
+export ZDOTDIR=$HOME/.config/zsh
+export LC_CTYPE=en_US.UTF-8
+
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+
+alias nnn="nnn -e"
+export NNN_PLUG='P:preview-tabbed;p:preview-tui;m:nmount;b:bookmarks;i:imgview;d:dragdrop'
+export NNN_BMS='d:~/code;D:~/Downloads/;n:~/.config/nvim'
+export NNN_FIFO='/tmp/nnn.fifo'
+export TERMINAL="st"
+
