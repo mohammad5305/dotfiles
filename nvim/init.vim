@@ -108,11 +108,10 @@ nnoremap <S-tab> :bprev<CR>
 nnoremap <Leader>o :enew<CR>
 nnoremap <Leader>w :Bclose<CR>
 
-" for complete
-set completeopt=menuone,noselect
 
 " neoformat map
 nnoremap <C-A-f> :Neoformat<CR>
+
 
 " telescope find_files
 nnoremap <silent><Leader>t :Telescope find_files <CR>
