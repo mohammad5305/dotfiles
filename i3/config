@@ -43,7 +43,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec st
-bindsym $mod+Shift+Return exec terminator
+bindsym $mod+Shift+Return exec konsole
 
 # kill focused window
 bindsym $mod+q kill
@@ -65,7 +65,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # start rofi (a program launcher)
 # bindsym $mod+d exec rofi -show drun -lines 5 -padding 18 -width 60 -location 0 -sidebar-mode  -font 'awesome 10' -eh 2
-bindsym $mod+d exec rofi -show drun  
+bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show window  
 
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -248,6 +248,7 @@ bindsym $mod+z exec st nnn -e
 
 # solve problem
 exec lxpolkit
+exec lxsession
 
 # polybar 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -288,5 +289,6 @@ exec_always python /mnt/myhard/code/python/reminder/sender.py
 # easy translate
 bindsym $mod+Shift+t exec python /mnt/myhard/code/python/translator/translateor.py
 
-# udiskie auto mount usb
-exec udiskie
+
+# pulseaudio
+exec pulseaudio

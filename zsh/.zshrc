@@ -18,7 +18,8 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # prompt 
-PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+# PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%2~%{$reset_color%}"
 
 # fix end and home button
 bindkey "^[[4~" end-of-line
@@ -30,6 +31,7 @@ alias vpn="sudo protonvpn c -f"
 alias vpn-off="sudo protonvpn d"
 alias dns-g="echo nameserver 8.8.8.8 | sudo tee -a /etc/resolv.conf"
 alias dns-c="echo nameserver 4.2.2.4 | sudo tee -a /etc/resolv.conf"
+# alias exa="exa --header --git --long"
 
 
 # subsearch
