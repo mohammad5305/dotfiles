@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse
 audio_device_state:1:Visualizer feed
-state: pause
-current: 0
-time: 0.948000
+state: play
+current: 28
+time: 13.461000
 random: 1
 repeat: 0
 single: 0
@@ -12,37 +12,36 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Goner.mp3
-1:Jesse Cook - Virtue.mp3
-2:oscar_and_the_wolf.mp3
-3:Ohne Dich (@Mezzrrab)-Rammstein _ @Mezzrrab.mp3
-4:FINNEAS-A-Concert-Six-Months-From-Now.mp3
-5:The-Weeknd-Blinding-Lights-320.mp3
-6:ANATOMY-OF-LIGHT.mp3
-7:ed-sheeran-bad-habits.mp3
-8:Jack Savoretti - Breaking the Rules.mp3
-9:Hozier-BetterLove.mp3
-10:01 Aaron Smith - Dancin (Krono Remix).mp3
-11:Dire_Straits_Sultans_Of_Swing.hd.mp3
-12:03) Re Mida,Matthew Adam - Fields of Purple.mp3
-13:Rag n Bone-Man-Human-320.mp3
-14:Regard-Ride-it.mp3
-15:04.Path-3-(7676).mp3
-16:01. Hurricanes.mp3
-17:Bruno-Mars-Talking-to-the-Moon.mp3
-18:Living-Life,In-The-Night-Cheriimoya.mp3
-19:01-Alec-Benjamin-Let-Me-Down-Slowly.mp3
-20:Duncan-Laurence-Love Dont-Hate-It.mp3
-21:like you do slowed reverb  - joji.mp3
-22:Bon-Jovi-Real-Love-320.mp3
-23:fismoll_-_look_at_this_2.mp3
-24:Doja-Cat-Kiss-Me-More-(feat.SZA).mp3
-25:P!nk-Cover-Me-In-Sunshine.mp3
-26:01AURORA-Runaway.mp3
-27:doll-shrimp.mp3
-28:Last-Day.mp3
-29:Måneskin-Beggin.mp3
-30:Fleurie-Hurts-Like-Hell.mp3
-31:Jack-Savoretti-Going-Home-320.mp3
-32:Tom-Odell-Another-Love.mp3
+0:06-Nowhere-www.eargasm.ir.mp3
+1:Frank-Sinatra-Killing-me-softly.mp3
+2:doll-shrimp.mp3
+3:Goner.mp3
+4:oscar_and_the_wolf.mp3
+5:before-I-close-my-eyes.mp3
+6:Josh-Groban-You-Raise-Me-Up.mp3
+7:The-Weeknd-Blinding-Lights-320.mp3
+8:AURORA-Runaway.mp3
+9:ANATOMY-OF-LIGHT.mp3
+10:fismoll_-_look_at_this_2.mp3
+11:Thomas-Azier-Babylon.mp3
+12:ed-sheeran-bad-habits.mp3
+13:Hozier-BetterLove.mp3
+14:Blackfield-CD-1-TRACK-2.mp3
+15:Måneskin-Beggin.mp3
+16:P!nk-Cover-Me-In-Sunshine.mp3
+17:Dire_Straits_Sultans_Of_Swing.hd.mp3
+18:Bruno-Mars-Talking-to-the-Moon.mp3
+19:Nico-Santos-End-Of-Summer.mp3
+20:Alexander-Rybak-Fairytale.mp3
+21:Mono-Exit-in-Darkness.mp3
+22:The-Macarons-Project-Fly-Me-to-the-Moon.mp3
+23:I-Got-You-on-Tape-Somersault.mp3
+24:Last-Day.mp3
+25:Rag n Bone-Man-Human-320.mp3
+26:Doja-Cat-Kiss-Me-More-(feat.SZA).mp3
+27:Alec-Benjamin-Let-Me-Down-Slowly.mp3
+28:Regard-Ride-it.mp3
+29:Tom-Odell-Another-Love.mp3
+30:Twenty-One-Pilots-Stressed-Out.mp3
+31:01-Ab-Ovo.mp3
 playlist_end
