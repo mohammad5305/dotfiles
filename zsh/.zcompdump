@@ -1,4 +1,4 @@
-#files: 1072	version: 5.8
+#files: 1077	version: 5.8
 
 _comps=(
 '-' '_precommand'
@@ -849,6 +849,7 @@ _comps=(
 'mpc' '_mpc'
 'mplayer' '_mplayer'
 'mpstat' '_sysstat'
+'mpv' '_mpv'
 'mr' '_myrepos'
 'mrd' '_mtools'
 'mread' '_mtools'
@@ -903,6 +904,7 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
+'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -1397,6 +1399,9 @@ _comps=(
 'type' '_which'
 'typeset' '_typeset'
 'udevadm' '_udevadm'
+'udiskie' '_udiskie'
+'udiskie-mount' '_udiskie-mount'
+'udiskie-umount' '_udiskie-umount'
 'udisksctl' '_udisksctl'
 'ufw' '_ufw'
 'ulimit' '_ulimit'
@@ -1809,11 +1814,12 @@ autoload -Uz _afew _android _archlinux-java _artisan _atach \
             _zcash-cli _polybar _polybar_msg _bat _bootctl \
             _busctl _bwrap _coredumpctl _curl _exa \
             _hostnamectl _journalctl _kernel-install _libinput _localectl \
-            _loginctl _machinectl _mkinitcpio _networkctl _nnn \
-            _pacman _pulseaudio _resolvectl _sd_hosts_or_user_at_host _sd_machines \
-            _sd_outputmodes _sd_unit_files _systemctl _systemd _systemd-analyze \
-            _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run \
-            _systemd-tmpfiles _timedatectl _udevadm _yay _youtube-dl \
+            _loginctl _machinectl _mkinitcpio _mpv _networkctl \
+            _ninja _nnn _pacman _pulseaudio _resolvectl \
+            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _systemctl \
+            _systemd _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn \
+            _systemd-path _systemd-run _systemd-tmpfiles _timedatectl _udevadm \
+            _udiskie _udiskie-mount _udiskie-umount _yay _youtube-dl \
             _cdr _all_labels _all_matches _alternative _approximate \
             _arg_compile _arguments _bash_completions _cache_invalid _call_function \
             _combination _complete _complete_debug _complete_help _complete_help_generic \
