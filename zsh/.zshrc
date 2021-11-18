@@ -18,8 +18,21 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # prompt 
-# PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%2~%{$reset_color%}"
+
+
+# git info
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+precmd() {
+    vcs_info
+}
+
+# zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[yellow]%} %{$fg[magenta]%}%b%{$fg[blue]%})"
+zstyle ':vcs_info:git:*' formats " %{$fg_bold[blue]%}git:(%{$fg[red]%}%b%{$fg_bold[blue]%})"
+PROMPT+="\$vcs_info_msg_0_ "
+
 
 # fix end and home button
 bindkey "^[[4~" end-of-line
@@ -29,8 +42,9 @@ bindkey "^[[H" beginning-of-line
 alias ls="ls --color=auto"
 alias vpn="sudo protonvpn c -f"
 alias vpn-off="sudo protonvpn d"
-alias dns-g="echo nameserver 8.8.8.8 | sudo tee -a /etc/resolv.conf"
-alias dns-c="echo nameserver 4.2.2.4 | sudo tee -a /etc/resolv.conf"
+alias rand-bg="feh -z --bg-scale ~/Pictures/anime/"
+alias cp="cp -iv" \
+mv="mv -iv"
 # alias exa="exa --header --git --long"
 
 
@@ -45,13 +59,11 @@ zstyle ':completion:*' menu select
 # reverse with shift+tab
 bindkey '^[[Z' reverse-menu-complete
 
-# git info
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:*' enable git
-precmd() {
-    vcs_info
-}
 
-zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[yellow]%} %{$fg[magenta]%}%b%{$fg[blue]%})"
-PROMPT+="\$vcs_info_msg_0_ "
+# robbyrussell theme for git 
+# PROMPT+='$reset_color%} $(git_prompt_info)'
+
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
