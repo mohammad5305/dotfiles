@@ -1,14 +1,23 @@
 call plug#begin("~/.config/nvim/autoload/plugged")
     " color and icon
     Plug 'ryanoasis/vim-devicons'
-    Plug 'ap/vim-css-color'
+    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'kyazdani42/nvim-web-devicons'
     " theme
     Plug 'joshdick/onedark.vim'
+    Plug 'gruvbox-community/gruvbox'
+    Plug 'tjdevries/colorbuddy.vim'
+    Plug 'tjdevries/gruvbuddy.nvim'
     " snippet
-    Plug 'hrsh7th/nvim-compe'
-    Plug 'hrsh7th/vim-vsnip' 
-    Plug 'hrsh7th/vim-vsnip-integ'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'onsails/lspkind-nvim'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'ray-x/cmp-treesitter'
+    Plug 'hrsh7th/cmp-nvim-lua'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
     " buffer stuff
     Plug 'rbgrouleff/bclose.vim'
     Plug 'ap/vim-buftabline'
@@ -16,16 +25,20 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'kabouzeid/nvim-lspinstall'
     Plug 'neovim/nvim-lspconfig'
     Plug 'glepnir/lspsaga.nvim' 
+    Plug 'nvim-lua/lsp-status.nvim'
     " File Explorer
-    Plug 'scrooloose/NERDTree'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
+    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'mcchrish/nnn.vim'
     " telescope stuff
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     " status line
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'tjdevries/express_line.nvim'
+    " onestatus
+    " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    " latex
+    Plug 'xuhdev/vim-latex-live-preview'
     " other stuff
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-commentary'
@@ -37,28 +50,34 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'sheerun/vim-polyglot'
     Plug '907th/vim-auto-save'
     Plug 'sbdchd/neoformat'
-    Plug 'tpope/vim-sensible'
+    Plug 'psf/black'
     Plug 'szw/vim-maximizer'
     Plug 'gryf/pylint-vim'
     Plug 'alvan/vim-closetag'
     Plug 'tweekmonster/startuptime.vim'
+    Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'folke/trouble.nvim'
+    Plug 'mbbill/undotree'
     " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
 call plug#end() 
 
-luafile ~/.config/nvim/lsp.lua
-luafile ~/.config/nvim/completion.lua
-luafile ~/.config/nvim/galaxyline.lua
+" luafile ~/.config/nvim/lsp.lua
+" luafile ~/.config/nvim/completion.lua
 luafile ~/.config/nvim/treesitter.lua
+luafile ~/.config/nvim/statusline.lua
+luafile ~/.config/nvim/nvimtree.lua
+luafile ~/.config/nvim/cmp.lua
+" luafile ~/.config/nvim/test.lua
+" luafile ~/.config/nvim/galaxyline.lua
+
 
 " normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-" sensible
-runtime! plugin/sensible.vim
 
 " setting 
-let mapleader=','
+let mapleader="\<Space>"
 set scrolloff=5
 set shortmess+=c
 syntax on
@@ -68,10 +87,15 @@ set noswapfile
 set backspace=indent,eol,start 
 set autoindent
 set shiftwidth=4
-set nohls
 set splitbelow
 set termguicolors
 set nowrap
+set nohls
+set smartindent
+set undofile
+set hidden
+set formatoptions-=cro
+set colorcolumn=90
 
 " clipboard
 set clipboard=unnamedplus
@@ -82,21 +106,24 @@ set number
 
 " theme and background
 set background=dark                    
-colorscheme onedark
+
+colorscheme gruvbox
+let g:gruvbox_invert_selection='0'
+hi CmpItemMenuDefault guifg=#4e545c
+
+" hi ColorColumn guibg=gray
+" lua require('colorbuddy').colorscheme('gruvbuddy')
+
 
 " tab stuff
-set smarttab                            
 set expandtab                           
-
-" refresh
-nnoremap <silent> <F5> :source % <CR>
+set smarttab                            
 
 " python terminal
 nnoremap <F10> :split term://python % <CR>
 nnoremap <F11> :split term://zsh <CR>
-
 " pylint 
-nnoremap <F2> :!pylint %\|sed "s/^\(\w*\):\s*\([0-9]\+\)/%:\2:\ \1:\ /g" <CR>
+nnoremap <F2> :!pylint % <CR>
 
 " Better tabbing
 vnoremap < <gv
@@ -114,10 +141,18 @@ nnoremap <C-A-f> :Neoformat<CR>
 
 
 " telescope find_files
-nnoremap <silent><Leader>t :Telescope find_files <CR>
+nnoremap <silent><Leader>tf :Telescope find_files <CR>
+nnoremap <silent><Leader>tg :Telescope git_files <CR>
 
 " closetag 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+
+" colorize plug
+lua require'colorizer'.setup()
+
+" Truble plugin
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
 
 " enable AutoSave on Vim startup
 let g:auto_save = 0
@@ -138,6 +173,10 @@ nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
+
+" cmp
+" set completeopt=menu,menuone,noselect
+
 
 " toggle maximzer
 nnoremap <silent><A-m> :MaximizerToggle<CR>
@@ -165,15 +204,21 @@ let g:nnn#layout = { 'window': { 'width': 0.4, 'height': 0.7, 'highlight': 'Debu
 " shortcut for nnn
 nnoremap <Leader>n:Np <CR>
 
-"shortcut for nerdtree
-nmap <C-l> :NERDTreeToggle<CR>
+"shortcut for nvimtree
+nnoremap <C-l> :NvimTreeToggle<CR>
+
+
 " shortcut for comment
 nnoremap <C-_> :Commentary <CR>
 vnoremap <C-_> :Commentary <CR>
 inoremap <C-_> <ESC>:Commentary <CR>
 
+" latex preview
+let g:livepreview_previewer = 'evince'
+
+
  " startify
- let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"},  {"t" : "/tmp/test.py"}, {"z" : "~/.config/zsh/.zshrc"}, {"T" : "~/code/python/test.py"}]
+ let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"},  {"t" : "/tmp/test.py"}, {"z" : "~/.config/zsh/.zshrc"}, {"T" : "~/code/python/test.py"}, {"f" : "~/.config/fish/config.fish"}]
 let s:header = [
       \ '',
    \ '██████  ██    ██ ███████ ███████ ██    ██     ██    ██ ██ ███    ███ ',
@@ -197,5 +242,4 @@ function! s:center(lines) abort
 endfunction
 let g:startify_custom_header = s:center(s:header)
 let g:startify_padding_left = 5
-
 
