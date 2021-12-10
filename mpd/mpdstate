@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse
 audio_device_state:1:Visualizer feed
-state: play
-current: 28
-time: 13.461000
+state: pause
+current: 34
+time: 144.628000
 random: 1
 repeat: 0
 single: 0
@@ -44,4 +44,9 @@ playlist_begin
 29:Tom-Odell-Another-Love.mp3
 30:Twenty-One-Pilots-Stressed-Out.mp3
 31:01-Ab-Ovo.mp3
+32:Halsey-honey.mp3
+33:Surf-Mesa-ily-i-love-you-baby-feat-Emilee.mp3
+34:Marc-Almond-Something's-Gotten-Hold-of-My-Heart.mp3
+35:Anathema–Unchained.mp3
+36:05-Otis-Redding-I-ve-Been-Loving-You-Too-Long.mp3
 playlist_end

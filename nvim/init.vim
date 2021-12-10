@@ -18,14 +18,17 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     Plug 'hrsh7th/cmp-nvim-lua'
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'rafamadriz/friendly-snippets'
+    " csharp 
+    Plug 'OmniSharp/omnisharp-vim'
     " buffer stuff
-    Plug 'rbgrouleff/bclose.vim'
     Plug 'ap/vim-buftabline'
+    Plug 'rbgrouleff/bclose.vim'
     " lsp
     Plug 'kabouzeid/nvim-lspinstall'
     Plug 'neovim/nvim-lspconfig'
     Plug 'glepnir/lspsaga.nvim' 
-    Plug 'nvim-lua/lsp-status.nvim'
+    " Plug 'nvim-lua/lsp-status.nvim'
     " File Explorer
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'mcchrish/nnn.vim'
@@ -61,20 +64,10 @@ call plug#begin("~/.config/nvim/autoload/plugged")
     " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
 call plug#end() 
 
-" luafile ~/.config/nvim/lsp.lua
-" luafile ~/.config/nvim/completion.lua
-luafile ~/.config/nvim/treesitter.lua
-luafile ~/.config/nvim/statusline.lua
-luafile ~/.config/nvim/nvimtree.lua
-luafile ~/.config/nvim/cmp.lua
-" luafile ~/.config/nvim/test.lua
-" luafile ~/.config/nvim/galaxyline.lua
-
 
 " normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
-
 
 " setting 
 let mapleader="\<Space>"
@@ -96,6 +89,9 @@ set undofile
 set hidden
 set formatoptions-=cro
 set colorcolumn=90
+
+" csharp
+let g:OmniSharp_server_stdio = 1
 
 " clipboard
 set clipboard=unnamedplus
@@ -148,35 +144,18 @@ nnoremap <silent><Leader>tg :Telescope git_files <CR>
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 
 
-" colorize plug
-lua require'colorizer'.setup()
-
 " Truble plugin
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 
 " enable AutoSave on Vim startup
-let g:auto_save = 0
-augroup ft_python
-  au!
-  au FileType python let b:auto_save = 1
-augroup END
-
-" >> Lsp key bindings
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K     <cmd>Lspsaga hover_doc<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-p> <cmd>Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <C-n> <cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
-xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
+" let g:auto_save = 0
+" augroup ft_python
+"   au!
+"   au FileType python let b:auto_save = 1
+" augroup END
 
 " cmp
 " set completeopt=menu,menuone,noselect
-
 
 " toggle maximzer
 nnoremap <silent><A-m> :MaximizerToggle<CR>
@@ -217,29 +196,23 @@ inoremap <C-_> <ESC>:Commentary <CR>
 let g:livepreview_previewer = 'evince'
 
 
- " startify
- let g:startify_bookmarks = [{"c" : "~/code/python"}, {"n" : "~/.config/nvim"}, {"v" : "~/.vimrc"}, {"w" : "~/.config/i3/config"},  {"t" : "/tmp/test.py"}, {"z" : "~/.config/zsh/.zshrc"}, {"T" : "~/code/python/test.py"}, {"f" : "~/.config/fish/config.fish"}]
-let s:header = [
-      \ '',
-   \ '██████  ██    ██ ███████ ███████ ██    ██     ██    ██ ██ ███    ███ ',
-   \ '██   ██ ██    ██ ██      ██       ██  ██      ██    ██ ██ ████  ████ ',
-   \ '██████  ██    ██ ███████ ███████   ████       ██    ██ ██ ██ ████ ██ ',
-   \ '██      ██    ██      ██      ██    ██         ██  ██  ██ ██  ██  ██ ',
-   \ '██       ██████  ███████ ███████    ██          ████   ██ ██      ██ ',
-   \ '                                                                     ',
-   \ '',
-   \ '',
-      \ '',
-      \ ]
+augroup oldfiles
+    autocmd!
+    autocmd FileType qf if get(w:, 'quickfix_title') =~# 'Oldfiles' | nnoremap <buffer> <silent> <CR> <CR>:cclose<CR> | endif
+augroup END
 
 
 
-function! s:center(lines) abort
-  let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
-  let centered_lines = map(copy(a:lines),
-        \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-  return centered_lines
-endfunction
-let g:startify_custom_header = s:center(s:header)
-let g:startify_padding_left = 5
 
+
+
+lua << EOF
+require("luasnip/loaders/from_vscode").lazy_load()
+require "lsp"
+require "nvimtree"
+require "statusline"
+require "treesitter"
+require "colorizer".setup()
+EOF
+
+source ~/.config/nvim/startify.vim
