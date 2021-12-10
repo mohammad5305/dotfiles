@@ -66,7 +66,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # start rofi (a program launcher)
 # bindsym $mod+d exec rofi -show drun -lines 5 -padding 18 -width 60 -location 0 -sidebar-mode  -font 'awesome 10' -eh 2
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+d exec rofi -show window  
+bindsym $mod+Shift+d exec dmenu_run
 
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -234,13 +234,15 @@ bindsym ctrl+$mod+l exec i3lock -i ~/Pictures/lockscreen.png && systemctl suspen
 bindsym XF86TouchpadToggle exec .config/toggletouchpad.sh # toggle touchpad
 
 # background image
-exec_always bash $HOME/.fehbg
+# exec_always bash $HOME/.fehbg
+exec feh -z --bg-scale ~/Pictures/anime/
 
 # change language
 exec_always "setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle"
 
-# take screenshot
-bindsym Print exec gnome-screenshot
+bindsym Print exec "import /tmp/test.png && cat /tmp/test.png | xclip -selection clipboard -target image/png -i"
+
+
 
 # file manager 
 bindsym $mod+x exec st ranger
@@ -256,6 +258,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # hide window title
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
+
 
 # opacity change
 exec compton
@@ -291,4 +294,7 @@ bindsym $mod+Shift+t exec python /mnt/myhard/code/python/translator/translateor.
 
 
 # pulseaudio
-exec pulseaudio
+exec_always pulseaudio
+
+# touchpad button
+exec synclient TapButton1=1

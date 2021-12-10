@@ -45,6 +45,9 @@ alias vpn-off="sudo protonvpn d"
 alias rand-bg="feh -z --bg-scale ~/Pictures/anime/"
 alias cp="cp -iv" \
 mv="mv -iv"
+alias w_minecraft="wine ~/.wine/drive_c/users/mohammad/Application\ Data/.minecraft/minecraft\ launcher/Minecraft\ Launcher.exe"
+
+
 # alias exa="exa --header --git --long"
 
 

@@ -11,6 +11,7 @@ if status is-interactive
     #     end
 
     # set_onedark $onedark_options
+    # set fish_pager_color_description B3A06D yellow
 end
 
 # Set the cursor shapes for the different vi modes.
@@ -29,7 +30,7 @@ alias mv="mv -iv"
 
 set --universal fish_greeting
 set fish_key_bindings fish_user_key_bindings
-theme_gruvbox dark medium
+# theme_gruvbox dark medium
 
 set __fish_git_prompt_color_branch red
 
