@@ -65,8 +65,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # start rofi (a program launcher)
 # bindsym $mod+d exec rofi -show drun -lines 5 -padding 18 -width 60 -location 0 -sidebar-mode  -font 'awesome 10' -eh 2
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+d exec dmenu_run
+bindsym $mod+Shift+d exec rofi -show drun
+bindsym $mod+d exec dmenu_run
 
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -248,10 +248,6 @@ bindsym Print exec "import /tmp/test.png && cat /tmp/test.png | xclip -selection
 bindsym $mod+x exec st ranger
 bindsym $mod+z exec st nnn -e
 
-# solve problem
-exec lxpolkit
-exec lxsession
-
 # polybar 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -259,28 +255,14 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 for_window [class="^.*"] border pixel 1
 new_window 1pixel
 
-
-# opacity change
-exec compton
-
-#vim
-bindsym $mod+v exec st nvim
-
-# mpd
-exec mpd --no-daemon --stdout --verbose
-
 # ncmpcpp
 bindsym $mod+n exec st ncmpcpp
 
-# for shift tab
-exec xmodmap -e 'keycode 23 = Tab'
 
 # for music
 bindsym $mod+Shift+n exec mpc next
 bindsym $mod+Shift+p exec mpc prev
 
-# dunst 
-exec dunst
 
 # brightness shortcut
 bindsym  XF86MonBrightnessUp    exec  xbacklight  -inc  20  #  increase  screen  brightness
@@ -292,9 +274,3 @@ exec_always python /mnt/myhard/code/python/reminder/sender.py
 # easy translate
 bindsym $mod+Shift+t exec python /mnt/myhard/code/python/translator/translateor.py
 
-
-# pulseaudio
-exec_always pulseaudio
-
-# touchpad button
-exec synclient TapButton1=1
