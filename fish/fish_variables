@@ -3,9 +3,15 @@
 SETUVAR FZF_COMPLETE:2
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25\x20\x2d\x2dlayout\x3dreverse\x20\x2d\x2dborder
 SETUVAR FZF_FIND_FILE_COMMAND:ag\x20\x2dl\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x2egit
-SETUVAR __fish_initialized:3100
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_DATA:/home/mohammad/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/home/mohammad/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/home/mohammad\x24
+SETUVAR __fish_initialized:3400
+SETUVAR _fisher_jethrokuan_2F_z_files:/home/mohammad/\x2econfig/fish/functions/__z\x2efish\x1e/home/mohammad/\x2econfig/fish/functions/__z_add\x2efish\x1e/home/mohammad/\x2econfig/fish/functions/__z_clean\x2efish\x1e/home/mohammad/\x2econfig/fish/functions/__z_complete\x2efish\x1e/home/mohammad/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/mohammad/\x2econfig/fish/functions/fisher\x2efish\x1e/home/mohammad/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1erkbk60/onedark\x2dfish\x1epeco/peco
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1erkbk60/onedark\x2dfish\x1epeco/peco\x1ejethrokuan/z
 SETUVAR _fisher_rkbk60_2F_onedark_2D_fish_files:/home/mohammad/\x2econfig/fish/functions/set_onedark\x2efish\x1e/home/mohammad/\x2econfig/fish/functions/set_onedark_color\x2efish\x1e/home/mohammad/\x2econfig/fish/completions/set_onedark\x2efish\x1e/home/mohammad/\x2econfig/fish/completions/set_onedark_color\x2efish
 SETUVAR fish_color_autosuggestion:4D5566
 SETUVAR fish_color_cancel:\x2dr
@@ -36,6 +42,8 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/mohammad/\x2elocal/bin
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

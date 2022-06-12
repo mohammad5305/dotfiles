@@ -38,5 +38,5 @@ function fish_prompt
 
 
     # echo -n -s (set_color green) (prompt_pwd) $normal  (set_color blue) (git_stuff) $normal " "$prompt_status $suffix " "
-    echo -n -s (set_color cyan) (prompt_pwd) $normal  (set_color blue) (git_stuff) $normal " "$prompt_status $suffix " "
+    echo -n -s (set_color green)"➜ "(set_color cyan)  (prompt_pwd) $normal  (set_color blue) (git_stuff) $normal " "$prompt_status $suffix " "
 end

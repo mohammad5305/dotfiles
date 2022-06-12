@@ -1,229 +1,146 @@
-call plug#begin("~/.config/nvim/autoload/plugged")
-    " color and icon
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'norcalli/nvim-colorizer.lua'
-    Plug 'kyazdani42/nvim-web-devicons'
-    " theme
-    Plug 'joshdick/onedark.vim'
-    Plug 'gruvbox-community/gruvbox'
-    " snippet
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'onsails/lspkind-nvim'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'ray-x/cmp-treesitter'
-    Plug 'hrsh7th/cmp-nvim-lua'
-    Plug 'L3MON4D3/LuaSnip'
-    Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'rafamadriz/friendly-snippets'
-    " csharp
-    Plug 'OmniSharp/omnisharp-vim'
-    " buffer stuff
-    " Plug 'ap/vim-buftabline'
-    " lsp
-    Plug 'kabouzeid/nvim-lspinstall'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'glepnir/lspsaga.nvim'
-    " File Explorer
-    " Plug 'kyazdani42/nvim-tree.lua'
-    Plug 'mcchrish/nnn.vim'
-    " telescope stuff
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    " status line
-    Plug 'tjdevries/express_line.nvim'
-    " other stuff
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'tpope/vim-commentary'
-    Plug 'mhinz/vim-startify'
-    Plug 'dense-analysis/ale'
-    Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-    Plug 'lepture/vim-jinja'
-    Plug 'sheerun/vim-polyglot'
-    " Plug '907th/vim-auto-save'
-    Plug 'sbdchd/neoformat'
-    Plug 'psf/black'
-    Plug 'szw/vim-maximizer'
-    Plug 'gryf/pylint-vim'
-    Plug 'alvan/vim-closetag'
-    Plug 'tweekmonster/startuptime.vim'
-    Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'mbbill/undotree'
-    Plug 'tpope/vim-surround'
-    Plug 'ThePrimeagen/harpoon'
-    " Plug 'andymass/vim-matchup'
-    " Plug 'prettier/vim-prettier', {'do': 'yarn install', 'for': ['html', 'python'] }
-call plug#end()
-
-" normal mode
-inoremap jk <ESC>
-inoremap kj <ESC>
-
 " setting
 let mapleader="\<Space>"
+set termbidi
 set scrolloff=5
-set shortmess+=c
+" set shortmess+=c
 syntax on
-set laststatus=2
-set noshowmode
+set laststatus=3
+" set noshowmode
 set noswapfile
 set backspace=indent,eol,start
 set autoindent
-set shiftwidth=4
+set autochdir
 set splitbelow
 set termguicolors
+set shiftwidth=4
 set nowrap
-set nohls
 set smartindent
 set undofile
-set hidden
+set nohidden
 set formatoptions-=cro
-set colorcolumn=90
-
-" csharp
-let g:OmniSharp_server_stdio = 1
-
+set colorcolumn=80
+set nojoinspaces
+set mouse=n
+"
 " clipboard
 set clipboard=unnamedplus
 
 " line number
-set relativenumber
-set number
-
-" theme and background
-source ~/.config/nvim/colors.vim
+set relativenumber number
 
 " tab stuff
 set expandtab
 set smarttab
 
-" python terminal
-nnoremap <F10> :split term://python % <CR>
-" pylint
-nnoremap <F2> :!pylint % <CR>
+" terminal app runner
+augroup runner
+	au!
+	autocmd BufEnter *.js let runner='node'
+	autocmd BufEnter *.py let runner='python'
+augroup END
 
-" Better tabbing
-vnoremap < <gv
-vnoremap > >gv
-
-" buffer stuff
-nnoremap <tab> :bnext<CR>
-nnoremap <S-tab> :bprev<CR>
-nnoremap <Leader>o :enew<CR>
-nnoremap <Leader>w :bdelete<CR>
-
-" neoformat map
-nnoremap <C-A-f> :Neoformat<CR>
+nnoremap <F10> :exe ":split term://".runner." %"<CR>
 
 " python formtter
 augroup python_formmater
   au!
   if executable("black")
-      au BufEnter *.py	setlocal formatexpr=
-      au BufEnter *.py	setlocal formatprg=black\ -q\ -
+	  au BufEnter *.py	setlocal formatexpr=
+	  au BufEnter *.py	setlocal formatprg=black\ -q\ -
   endif
 augroup END
+
+augroup wiki
+	au!
+	au FileType vimwiki setlocal spell
+	au FileType vimwiki setlocal wrap
+augroup END
+
+
+"" Eight length tab indetation for c files
+autocmd FileType c 
+		\ set shiftwidth=8 tabstop=8 softtabstop=8
+
+"" Two length tab indentation for some files
+autocmd FileType vim,lua,nginx,sh,sent 
+		\ set shiftwidth=4 tabstop=4 softtabstop=4
+
+"" Four space indetation for python files
+autocmd FileType python,rmd 
+		\ set expandtab shiftwidth=4 tabstop=4 softtabstop=4
+
+
+augroup litecorrect
+  autocmd!
+  autocmd FileType markdown,mkd call litecorrect#init()
+  autocmd FileType textile call litecorrect#init()
+  autocmd FileType wiki call litecorrect#init()
+augroup END
+
+inoremap <C-s> <c-g>u<Esc>[s1z=`]A<c-g>u
 
 " ale options
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['black'],}
 
-" telescope find_files
-nnoremap <silent><Leader>tf :Telescope find_files <CR>
-nnoremap <silent><Leader>tg :Telescope git_files <CR>
-
-" closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
-
-
-" cmp
-" set completeopt=menu,menuone,noselect
-
-" toggle maximzer
-nnoremap <silent><A-m> :MaximizerToggle<CR>
-
-" nice maps
-nnoremap Y y$
-
-" nice moving
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==
-inoremap <C-k> <esc>:m .-2<CR>==
-nnoremap <leader>k :m .-2<CR>==
-nnoremap <leader>j :m .+1<CR>==
-
-" nnn
-let g:nnn#layout = 'new'
-
-let g:nnn#layout = { 'left': '~20%' }
-
-let g:nnn#layout = { 'window': { 'width': 0.4, 'height': 0.7, 'highlight': 'Debug' } }
-nnoremap <Leader>n:Np <CR>
-
-"shortcut for nvimtree
-" nnoremap <C-l> :NvimTreeToggle<CR>
+"  netrw section
+let g:netrw_banner = 0
 let g:NetrwIsOpen=0
 
 function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
+	if g:NetrwIsOpen
+		let i = bufnr("$")
+		while (i >= 1)
+			if (getbufvar(i, "&filetype") == "netrw")
+				silent exe "bwipeout " . i 
+			endif
+			let i-=1
+		endwhile
+		let g:NetrwIsOpen=0
+	else
+		let g:NetrwIsOpen=1
+		silent Lexplore
+	endif
 endfunction
 
 nnoremap <C-l> :call ToggleNetrw() <CR>
 
 
-" shortcut for comment
-nnoremap <C-_> :Commentary <CR>
-vnoremap <C-_> :Commentary <CR>
-inoremap <C-_> <ESC>:Commentary <CR>
-
 " netrw
 augroup netrw_setup | au!
-    au FileType netrw nmap <buffer> l <CR>
-    au FileType netrw nmap <buffer> h -
+	au FileType netrw nmap <buffer> l <CR>
+	au FileType netrw nmap <buffer> <C-l> :call ToggleNetrw()<CR>
+	au FileType netrw nmap <buffer> h -
+	au FileType netrw nmap <buffer> <C-q> :call ToggleNetrw() <CR>
 augroup END
 let g:netrw_winsize=40
 
-" latex preview
-" let g:livepreview_previewer = 'evince'
-
-
-augroup oldfiles
-    autocmd!
-    autocmd FileType qf if get(w:, 'quickfix_title') =~# 'Oldfiles' | nnoremap <buffer> <silent> <CR> <CR>:cclose<CR> | endif
-augroup END
-
-
 
 augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+	autocmd!
+	autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
 
+au BufRead :bwipeout 1
+	
+
+" indent for php
+autocmd FileType php setlocal autoindent
 
 
+let g:vimwiki_list = [{'path': '~/.vimwiki/' }]
+
+" theme and background
+source ~/.config/nvim/colors.vim
+
+source ~/.config/nvim/statusline.vim
+
+source ~/.config/nvim/abrev.vim
 lua << EOF
+require 'packages'
 require("luasnip/loaders/from_vscode").lazy_load()
+require('nvim-ts-autotag').setup()
 require "lsp"
--- require "nvimtree"
-require "statusline"
+-- require "statusline"
 require "treesitter"
-require "colorizer".setup()
+require "mapping"
 EOF
-
-source ~/.config/nvim/startify.vim
-source ~/.config/nvim/harpoon.vim
