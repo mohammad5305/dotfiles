@@ -38,17 +38,7 @@ PROMPT+="\$vcs_info_msg_0_ "
 bindkey "^[[4~" end-of-line
 bindkey "^[[H" beginning-of-line
 
-# alias and export
-alias ls="ls --color=auto"
-alias vpn="sudo protonvpn c -f"
-alias vpn-off="sudo protonvpn d"
-alias rand-bg="feh -z --bg-scale ~/Pictures/anime/"
-alias cp="cp -iv" \
-mv="mv -iv"
-alias w_minecraft="wine ~/.wine/drive_c/users/mohammad/Application\ Data/.minecraft/minecraft\ launcher/Minecraft\ Launcher.exe"
-alias le="exa"
-alias vim="nvim"
-
+source ~/.config/shell/alias
 
 # alias exa="exa --header --git --long"
 

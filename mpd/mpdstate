@@ -1,9 +1,9 @@
-sw_volume: 100
+sw_volume: 70
 audio_device_state:1:pulse
 audio_device_state:1:Visualizer feed
-state: play
-current: 59
-time: 120.159000
+state: pause
+current: 10
+time: 152.129000
 random: 0
 repeat: 0
 single: 0
@@ -12,91 +12,17 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Frank-Sinatra-Killing-me-softly.mp3
-1:doll-shrimp.mp3
-2:oscar_and_the_wolf.mp3
-3:before-I-close-my-eyes.mp3
-4:Josh-Groban-You-Raise-Me-Up.mp3
-5:The-Weeknd-Blinding-Lights-320.mp3
-6:AURORA-Runaway.mp3
-7:ANATOMY-OF-LIGHT.mp3
-8:fismoll_-_look_at_this_2.mp3
-9:Thomas-Azier-Babylon.mp3
-10:ed-sheeran-bad-habits.mp3
-11:Hozier-BetterLove.mp3
-12:Blackfield-CD-1-TRACK-2.mp3
-13:Måneskin-Beggin.mp3
-14:P!nk-Cover-Me-In-Sunshine.mp3
-15:Dire_Straits_Sultans_Of_Swing.hd.mp3
-16:Bruno-Mars-Talking-to-the-Moon.mp3
-17:Nico-Santos-End-Of-Summer.mp3
-18:Alexander-Rybak-Fairytale.mp3
-19:Mono-Exit-in-Darkness.mp3
-20:The-Macarons-Project-Fly-Me-to-the-Moon.mp3
-21:I-Got-You-on-Tape-Somersault.mp3
-22:Last-Day.mp3
-23:Rag n Bone-Man-Human-320.mp3
-24:Doja-Cat-Kiss-Me-More-(feat.SZA).mp3
-25:Alec-Benjamin-Let-Me-Down-Slowly.mp3
-26:Frank-Sinatra-Killing-me-softly.mp3
-27:doll-shrimp.mp3
-28:oscar_and_the_wolf.mp3
-29:before-I-close-my-eyes.mp3
-30:Josh-Groban-You-Raise-Me-Up.mp3
-31:The-Weeknd-Blinding-Lights-320.mp3
-32:AURORA-Runaway.mp3
-33:ANATOMY-OF-LIGHT.mp3
-34:fismoll_-_look_at_this_2.mp3
-35:Thomas-Azier-Babylon.mp3
-36:ed-sheeran-bad-habits.mp3
-37:Hozier-BetterLove.mp3
-38:Blackfield-CD-1-TRACK-2.mp3
-39:Måneskin-Beggin.mp3
-40:P!nk-Cover-Me-In-Sunshine.mp3
-41:Dire_Straits_Sultans_Of_Swing.hd.mp3
-42:Bruno-Mars-Talking-to-the-Moon.mp3
-43:Nico-Santos-End-Of-Summer.mp3
-44:Alexander-Rybak-Fairytale.mp3
-45:Mono-Exit-in-Darkness.mp3
-46:The-Macarons-Project-Fly-Me-to-the-Moon.mp3
-47:I-Got-You-on-Tape-Somersault.mp3
-48:Last-Day.mp3
-49:Rag n Bone-Man-Human-320.mp3
-50:Doja-Cat-Kiss-Me-More-(feat.SZA).mp3
-51:Alec-Benjamin-Let-Me-Down-Slowly.mp3
-52:Halsey-honey.mp3
-53:Surf-Mesa-ily-i-love-you-baby-feat-Emilee.mp3
-54:Duncan-Laurence-Love Dont-Hate-It.mp3
-55:Regard-Ride-it.mp3
-56:Tom-Odell-Another-Love.mp3
-57:05-Otis-Redding-I-ve-Been-Loving-You-Too-Long.mp3
-58:Just-The-Two-Of-Us.mp3
-59:05-Way-To-Fall.mp3
-60:06-Nowhere-www.eargasm.ir.mp3
-61:Frank-Sinatra-Killing-me-softly.mp3
-62:doll-shrimp.mp3
-63:oscar_and_the_wolf.mp3
-64:before-I-close-my-eyes.mp3
-65:Josh-Groban-You-Raise-Me-Up.mp3
-66:The-Weeknd-Blinding-Lights-320.mp3
-67:AURORA-Runaway.mp3
-68:ANATOMY-OF-LIGHT.mp3
-69:fismoll_-_look_at_this_2.mp3
-70:Thomas-Azier-Babylon.mp3
-71:ed-sheeran-bad-habits.mp3
-72:Hozier-BetterLove.mp3
-73:Blackfield-CD-1-TRACK-2.mp3
-74:Måneskin-Beggin.mp3
-75:P!nk-Cover-Me-In-Sunshine.mp3
-76:Dire_Straits_Sultans_Of_Swing.hd.mp3
-77:Bruno-Mars-Talking-to-the-Moon.mp3
-78:Nico-Santos-End-Of-Summer.mp3
-79:Alexander-Rybak-Fairytale.mp3
-80:Mono-Exit-in-Darkness.mp3
-81:The-Macarons-Project-Fly-Me-to-the-Moon.mp3
-82:I-Got-You-on-Tape-Somersault.mp3
-83:Last-Day.mp3
-84:Rag n Bone-Man-Human-320.mp3
-85:Doja-Cat-Kiss-Me-More-(feat.SZA).mp3
-86:Alec-Benjamin-Let-Me-Down-Slowly.mp3
+0:Montell Fish - Fall in Love with You..mp3
+1:Tom-Odell-Another-Love.mp3
+2:06 Nirvana - Polly (Album Version).mp3
+3:NCS The Best of 2017 CD 1 TRACK 8 (320).mp3
+4:Ghostly Kisses - A diffrent Kind Of Love.mp3
+5:Halsey-honey.mp3
+6:Deep End CD 1 TRACK 1 (FLAC).flac
+7:Cold World CD 1 TRACK 1 (320).mp3
+8:Kate Bush - Running Up That Hill A Deal With God.mp3
+9:Can t Hold Us (feat. Ray Dalton) - Macklemore   Ryan Lewis.mp3
+10:Low – Last Night I Dreamt That Somebody Loved Me.mp3
+11:If You Wanna - Alex Lustig  Ayelle (320).mp3
+12:Rip X - Iamjakehill.mp3
 playlist_end

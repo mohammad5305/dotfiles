@@ -1,10 +1,16 @@
 require'nvim-treesitter.configs'.setup {
     -- ensure_installed can be "all" or a list of languages { "python", "javascript" }
-    ensure_installed = {"python", "bash"},
+    ensure_installed = {"python", "bash", "javascript",'html', 'css', 'lua'},
 
     highlight = {
       enable = true
     },
+    autotag = {
+        enable = true,
+    },
+	indent = {
+		enable = true,
+	},
     incremental_selection = {
       enable = true,  -- you can also use a table with list of langs here (e.g. { "python", "javascript" })
       disable = { "cpp","c" },
@@ -16,7 +22,7 @@ require'nvim-treesitter.configs'.setup {
       }
     },
     textobjects = {
-      -- These are provided by 
+      -- These are provided by
       select = {
         enable = true,  -- you can also use a table with list of langs here (e.g. { "python", "javascript" })
         keymaps = {

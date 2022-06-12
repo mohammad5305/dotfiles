@@ -7,8 +7,14 @@ local sections = require "el.sections"
 local subscribe = require "el.subscribe"
 local lsp_statusline = require "el.plugins.lsp_status"
 local helper = require "el.helper"
+local diagnostic = require "el.diagnostic"
 
 local has_lsp_extensions, ws_diagnostics = pcall(require, "lsp_extensions.workspace.diagnostic")
+
+-- TODO: Spinning planet extension. Integrated w/ telescope.
+-- ◐ ◓ ◑ ◒
+-- 🌛︎🌝︎🌜︎🌚︎
+-- Show telescope icon / emoji when you open it as well
 
 local git_icon = subscribe.buf_autocmd("el_file_icon", "BufRead", function(_, bufnr)
   local icon = extensions.file_icon(_, bufnr)
@@ -31,24 +37,25 @@ local git_changes = subscribe.buf_autocmd("el_git_changes", "BufWritePost", func
 end)
 
 local ws_diagnostic_counts = function(_, buffer)
-    if not has_lsp_extensions then
-        return ""
-    end
+  if not has_lsp_extensions then
+    return ""
+  end
 
-    local messages = {}
-    local error_count = ws_diagnostics.get_count(buffer.bufnr, "Error")
-    local hint_count = ws_diagnostics.get_count(buffer.bufnr, "Hint")
-    local warnings_count = ws_diagnostics.get_count(buffer.bufnr, "Warning")
-    local info_count = ws_diagnostics.get_count(buffer.bufnr, "Information")
+  local messages = {}
 
-    table.insert(messages, 'E ' .. error_count )
-    table.insert(messages, 'W ' .. warnings_count )
-    table.insert(messages, 'H ' .. hint_count)
-    table.insert(messages, 'I ' .. info_count )
+  local error_count = ws_diagnostics.get_count(buffer.bufnr, "Error")
 
-    return table.concat(messages, " ")
+  local x = "⬤"
+  if error_count == 0 then
+    -- pass
+  elseif error_count < 5 then
+    table.insert(messages, string.format("%s#%s#%s%%*", "%", "StatuslineError" .. error_count, x))
+  else
+    table.insert(messages, string.format("%s#%s#%s%%*", "%", "StatuslineError5", x))
+  end
+
+  return table.concat(messages, "")
 end
-
 
 local show_current_func = function(window, buffer)
   if buffer.filetype == "lua" then
@@ -69,6 +76,8 @@ local is_sourcegraph = function(_, buffer)
     return true
   end
 end
+
+local diagnostic_display = diagnostic.make_buffer()
 
 require("el").setup {
   generator = function(window, buffer)
@@ -92,12 +101,13 @@ require("el").setup {
       { " " },
       { sections.split, required = true },
       { git_icon },
-      { sections.maximum_width(builtin.responsive_file(140, 90), 0.40), required = true },
+      { sections.maximum_width(builtin.make_responsive_file(140, 90), 0.40), required = true },
       { sections.collapse_builtin { { " " }, { builtin.modified_flag } } },
       { sections.split, required = true },
+      { diagnostic_display },
       { show_current_func },
-      { lsp_statusline.server_progress },
-      { ws_diagnostic_counts },
+      -- { lsp_statusline.server_progress },
+      -- { ws_diagnostic_counts },
       { git_changes },
       { "[" },
       { builtin.line_with_width(3) },
@@ -131,3 +141,15 @@ require("el").setup {
     return result
   end,
 }
+
+-- require("fidget").setup {
+--   text = {
+--     spinner = "moon",
+--   },
+--   align = {
+--     bottom = true,
+--   },
+--   window = {
+--     relative = "editor",
+--   },
+-- }

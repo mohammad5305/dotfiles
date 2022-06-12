@@ -1,33 +1,5 @@
 Cmp = require("cmp")
 local lspkind = require('lspkind')
-lspkind.init()
-
-local function has_words_before()
-    if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-        return false
-    end
-    local l, c = unpack(vim.api.nvim_win_get_cursor(0))
-    return col ~= 0 and vim.api.nvim_buf_get_lines(0, l-1, l, true)[1]:sub(c,c):match("%s") == nil
-end
-
-local function repltermcodes(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local function feedkey(k, mode)
-    vim.api.nvim_feedkeys(repltermcodes(k), mode, true)
-end
-
--- this is unnecesary for this config, but useful as reference
-local function tabfunc(fallback)
-    if vim.fn.pumvisible() == 1 then
-        feedkey("<c-n>", "n")
-    elseif has_words_before() then
-        Cmp.complete()
-    else
-        fallback()
-    end
-end
 
 Cmp.setup({
     sources = {
@@ -96,17 +68,24 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('x', 'ga', '<cmd>Lspsaga range_code_action()<CR>', opts)
 end
 
+local lsp_installer = require("nvim-lsp-installer")
 
-local function setup_servers()
-    require'lspinstall'.setup()
-    local servers = require'lspinstall'.installed_servers()
-    for _, server in pairs(servers) do
-        require'lspconfig'[server].setup{
-            capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-            on_attach = on_attach
-        }
-    end
-end
+lsp_installer.on_server_ready(function(server)
+    local opts = {
+        capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        on_attach = on_attach
+    }
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
+    -- before passing it onwards to lspconfig.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
 
 local sumneko_root_path = '/home/mohammad/.config/nvim/lua_lsp'
 local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
@@ -132,6 +111,7 @@ require'lspconfig'.sumneko_lua.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
@@ -140,11 +120,3 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
-
-setup_servers()
-
--- Automatically reload after `:LspInstall <server>`
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
