@@ -21,3 +21,211 @@ Nov 09 10:49 : player: played "Rag n Bone-Man-Human-320.mp3"
 Nov 09 11:34 : player: played "Blackfield-CD-1-TRACK-2.mp3"
 Nov 09 11:41 : player: played "Mono-Exit-in-Darkness.mp3"
 Nov 09 11:45 : player: played "Dire_Straits_Sultans_Of_Swing.hd.mp3"
+Jun 13 15:07 : player: played "Kate Bush - Running Up That Hill A Deal With God.mp3"
+Jun 13 15:13 : event: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 13 15:13 : state_file: Loading state file /home/mohammad/.config/mpd/mpdstate
+Jun 13 15:13 : playlist: queue song 9:"Can t Hold Us (feat. Ray Dalton) - Macklemore   Ryan Lewis.mp3"
+Jun 13 15:13 : inotify: initializing inotify
+Jun 13 15:13 : decoder_thread: probing plugin mad
+Jun 13 15:13 : mad: detected LAME version 3.99 ("LAME3.99r")
+Jun 13 15:13 : mad: LAME peak found: 0
+Jun 13 15:13 : mad: LAME track gain found: -3.3
+Jun 13 15:13 : mad: encoder delay is 576, encoder padding is 1104
+Jun 13 15:13 : decoder: audio_format=44100:24:2, seekable=true
+Jun 13 15:13 : inotify: watching music directory
+Jun 13 15:13 : output: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jun 13 15:13 : client: [0] opened from 127.0.0.1:53284
+Jun 13 15:13 : client: [0] process command list
+Jun 13 15:13 : client: process command "status"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: process command "currentsong"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: [0] process command list returned 0
+Jun 13 15:13 : client: [0] closed
+Jun 13 15:13 : client: [1] opened from 127.0.0.1:53286
+Jun 13 15:13 : client: [1] process command list
+Jun 13 15:13 : client: process command "status"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: process command "currentsong"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: [1] process command list returned 0
+Jun 13 15:13 : client: [1] closed
+Jun 13 15:13 : client: [2] opened from 127.0.0.1:53288
+Jun 13 15:13 : client: [2] process command list
+Jun 13 15:13 : client: process command "status"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: process command "currentsong"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: [2] process command list returned 0
+Jun 13 15:13 : client: [2] closed
+Jun 13 15:13 : client: [3] opened from 127.0.0.1:53290
+Jun 13 15:13 : client: [3] process command list
+Jun 13 15:13 : client: process command "status"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: process command "currentsong"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: [3] process command list returned 0
+Jun 13 15:13 : client: [3] closed
+Jun 13 15:13 : client: [4] opened from 127.0.0.1:53294
+Jun 13 15:13 : client: [4] process command list
+Jun 13 15:13 : client: process command "status"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: process command "currentsong"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: [4] process command list returned 0
+Jun 13 15:13 : client: [4] closed
+Jun 13 15:13 : client: [5] opened from 127.0.0.1:53296
+Jun 13 15:13 : client: [5] process command list
+Jun 13 15:13 : client: process command "status"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: process command "currentsong"
+Jun 13 15:13 : client: command returned 0
+Jun 13 15:13 : client: [5] process command list returned 0
+Jun 13 15:13 : client: [5] closed
+Jun 13 15:14 : client: [6] opened from 127.0.0.1:53300
+Jun 13 15:14 : client: [6] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [6] process command list returned 0
+Jun 13 15:14 : client: [6] closed
+Jun 13 15:14 : client: [7] opened from 127.0.0.1:53302
+Jun 13 15:14 : client: [7] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [7] process command list returned 0
+Jun 13 15:14 : client: [7] closed
+Jun 13 15:14 : client: [8] opened from 127.0.0.1:53304
+Jun 13 15:14 : client: [8] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [8] process command list returned 0
+Jun 13 15:14 : client: [8] closed
+Jun 13 15:14 : client: [9] opened from 127.0.0.1:53306
+Jun 13 15:14 : client: [9] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [9] process command list returned 0
+Jun 13 15:14 : client: [9] closed
+Jun 13 15:14 : client: [10] opened from 127.0.0.1:53308
+Jun 13 15:14 : client: [10] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [10] process command list returned 0
+Jun 13 15:14 : client: [10] closed
+Jun 13 15:14 : client: [11] opened from 127.0.0.1:53310
+Jun 13 15:14 : client: [11] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [11] process command list returned 0
+Jun 13 15:14 : client: [11] closed
+Jun 13 15:14 : client: [12] opened from 127.0.0.1:53312
+Jun 13 15:14 : client: [12] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [12] process command list returned 0
+Jun 13 15:14 : client: [12] closed
+Jun 13 15:14 : client: [13] opened from 127.0.0.1:53314
+Jun 13 15:14 : client: [13] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [13] process command list returned 0
+Jun 13 15:14 : client: [13] closed
+Jun 13 15:14 : client: [14] opened from 127.0.0.1:53316
+Jun 13 15:14 : client: [14] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [14] process command list returned 0
+Jun 13 15:14 : client: [14] closed
+Jun 13 15:14 : client: [15] opened from 127.0.0.1:53318
+Jun 13 15:14 : client: [15] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [15] process command list returned 0
+Jun 13 15:14 : client: [15] closed
+Jun 13 15:14 : client: [16] opened from 127.0.0.1:53320
+Jun 13 15:14 : client: [16] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [16] process command list returned 0
+Jun 13 15:14 : client: [16] closed
+Jun 13 15:14 : client: [17] opened from 127.0.0.1:53322
+Jun 13 15:14 : client: [17] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [17] process command list returned 0
+Jun 13 15:14 : client: [17] closed
+Jun 13 15:14 : client: [18] opened from 127.0.0.1:53324
+Jun 13 15:14 : client: [18] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [18] process command list returned 0
+Jun 13 15:14 : client: [18] closed
+Jun 13 15:14 : client: [19] opened from 127.0.0.1:53326
+Jun 13 15:14 : client: [19] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [19] process command list returned 0
+Jun 13 15:14 : client: [19] closed
+Jun 13 15:14 : client: [20] opened from 127.0.0.1:53328
+Jun 13 15:14 : client: [20] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [20] process command list returned 0
+Jun 13 15:14 : client: [20] closed
+Jun 13 15:14 : client: [21] opened from 127.0.0.1:53330
+Jun 13 15:14 : client: [21] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [21] process command list returned 0
+Jun 13 15:14 : client: [21] closed
+Jun 13 15:14 : client: [22] opened from 127.0.0.1:53332
+Jun 13 15:14 : client: [22] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [22] process command list returned 0
+Jun 13 15:14 : client: [22] closed
+Jun 13 15:14 : client: [23] opened from 127.0.0.1:53334
+Jun 13 15:14 : client: [23] process command list
+Jun 13 15:14 : client: process command "status"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: process command "currentsong"
+Jun 13 15:14 : client: command returned 0
+Jun 13 15:14 : client: [23] process command list returned 0
+Jun 13 15:14 : client: [23] closed
+Jun 13 15:14 : state_file: Saving state file /home/mohammad/.config/mpd/mpdstate
+Jun 13 15:14 : player: played "Kate Bush - Running Up That Hill A Deal With God.mp3"
+Jun 13 15:14 : fifo_output: Removing FIFO "/tmp/mpd.fifo"

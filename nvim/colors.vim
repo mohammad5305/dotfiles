@@ -1,6 +1,6 @@
-" colorscheme gruvbox
+colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 'hard'
-" set bg=dark
+set bg=dark
 
 " if strftime("%H") < 15  && strftime("%H") > 11
 "     set bg=light
@@ -11,7 +11,6 @@
 
 " hi ColorColumn ctermbg=0 guibg=grey
 " colo tokyonight
-colorscheme monokai_pro
 " hi SignColumn guibg=none
 " hi CursorLineNR guibg=None
 " highlight LineNr guifg=#5eacd3

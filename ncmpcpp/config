@@ -30,3 +30,14 @@
  progressbar_elapsed_color = blue:b
  statusbar_color = red
  statusbar_time_color = cyan:b
+
+ [visualizer]
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_in_stereo = "no"
+visualizer_type = "wave"
+visualizer_output_name = "my_fifo"
+visualizer_look = "│┃"
+visualizer_color = "default"
+
+## you have dunst? 
+execute_on_song_change = /home/mohammad/song_change.sh
