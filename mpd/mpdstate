@@ -2,8 +2,8 @@ sw_volume: 70
 audio_device_state:1:pulse
 audio_device_state:1:Visualizer feed
 state: pause
-current: 10
-time: 152.129000
+current: 2
+time: 153.206000
 random: 0
 repeat: 0
 single: 0
@@ -15,14 +15,23 @@ playlist_begin
 0:Montell Fish - Fall in Love with You..mp3
 1:Tom-Odell-Another-Love.mp3
 2:06 Nirvana - Polly (Album Version).mp3
-3:NCS The Best of 2017 CD 1 TRACK 8 (320).mp3
-4:Ghostly Kisses - A diffrent Kind Of Love.mp3
-5:Halsey-honey.mp3
-6:Deep End CD 1 TRACK 1 (FLAC).flac
-7:Cold World CD 1 TRACK 1 (320).mp3
-8:Kate Bush - Running Up That Hill A Deal With God.mp3
-9:Can t Hold Us (feat. Ray Dalton) - Macklemore   Ryan Lewis.mp3
-10:Low – Last Night I Dreamt That Somebody Loved Me.mp3
-11:If You Wanna - Alex Lustig  Ayelle (320).mp3
-12:Rip X - Iamjakehill.mp3
+3:Ghostly Kisses - A diffrent Kind Of Love.mp3
+4:Halsey-honey.mp3
+5:Deep End CD 1 TRACK 1 (FLAC).flac
+6:Cold World CD 1 TRACK 1 (320).mp3
+7:Kate Bush - Running Up That Hill A Deal With God.mp3
+8:Can t Hold Us (feat. Ray Dalton) - Macklemore   Ryan Lewis.mp3
+9:Low – Last Night I Dreamt That Somebody Loved Me.mp3
+10:If You Wanna - Alex Lustig  Ayelle (320).mp3
+11:Rip X - Iamjakehill.mp3
+12:Hillsong Young & free - Highs & lows.flac
+13:Bishop Briggs CD 1 TRACK 1 (FLAC).flac
+14:Confidently Lost CD 1 TRACK 7 (FLAC).flac
+15:Easier CD 1 TRACK 1 (FLAC).flac
+16:You Broke My Heart Again (feat. Aiko) CD 1 TRACK 1 (FLAC).flac
+17:midnight love CD 1 TRACK 1 (FLAC).flac
+18:Colour Green CD 1 TRACK 5 (FLAC).flac
+19:Patty Smyth CD 1 TRACK 4 (FLAC).flac
+20:Your Mess Is Mine CD 1 TRACK 1 (FLAC).flac
+21:sad girl CD 1 TRACK 5 (FLAC).flac
 playlist_end

@@ -1,0 +1,136 @@
+" setting
+let mapleader="\<Space>"
+set termbidi
+set scrolloff=5
+" set shortmess+=c
+syntax on
+set laststatus=3
+" set noshowmode
+set noswapfile
+set backspace=indent,eol,start
+set autoindent
+set autochdir
+set splitbelow
+set termguicolors
+set shiftwidth=4
+set nowrap
+set nohls
+set smartindent
+set undofile
+set nohidden
+set formatoptions-=cro
+set colorcolumn=80
+set nojoinspaces
+set mouse=n
+set lazyredraw
+set autoread
+
+" clipboard
+set clipboard=unnamedplus
+
+" line number
+set relativenumber number
+
+" tab stuff
+set expandtab
+set smarttab
+
+" terminal app runner
+augroup runner
+	au!
+	autocmd BufEnter *.js let runner='node'
+	autocmd BufEnter *.py let runner='python'
+augroup END
+
+nnoremap <F10> :exe ":split term://".runner." %"<CR>
+
+augroup wiki
+	au!
+	au FileType vimwiki setlocal spell
+	au FileType vimwiki setlocal wrap
+augroup END
+
+
+"" Eight length tab indetation for c files
+autocmd FileType c 
+		\ set shiftwidth=8 tabstop=8 softtabstop=8
+
+"" Two length tab indentation for some files
+autocmd FileType vim,lua,nginx,sh,sent 
+		\ set shiftwidth=4 tabstop=4 softtabstop=4
+
+"" Four space indetation for python files
+autocmd FileType python,rmd 
+		\ set expandtab shiftwidth=4 tabstop=4 softtabstop=4
+
+
+augroup litecorrect
+  autocmd!
+  autocmd FileType markdown,mkd call litecorrect#init()
+  autocmd FileType textile call litecorrect#init()
+  autocmd FileType wiki call litecorrect#init()
+augroup END
+
+inoremap <C-s> <c-g>u<Esc>[s1z=`]A<c-g>u
+
+
+
+
+"  netrw section
+let g:netrw_banner = 0
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+	if g:NetrwIsOpen
+		let i = bufnr("$")
+		while (i >= 1)
+			if (getbufvar(i, "&filetype") == "netrw")
+				silent exe "bwipeout " . i 
+			endif
+			let i-=1
+		endwhile
+		let g:NetrwIsOpen=0
+	else
+		let g:NetrwIsOpen=1
+		silent Lexplore
+	endif
+endfunction
+
+nnoremap - :call ToggleNetrw()<CR>
+
+augroup netrw_setup | au!
+	au FileType netrw nmap <buffer> l <CR>
+	au FileType netrw nmap <buffer> <-> :call ToggleNetrw()<CR>
+	au FileType netrw nmap <buffer> h -
+augroup END
+let g:netrw_winsize=40
+
+
+augroup highlight_yank
+	autocmd!
+	autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 50})
+augroup END
+
+
+" indent for php
+autocmd FileType php setlocal autoindent
+
+
+let g:vimwiki_list = [{'path': '~/.vimwiki/' }]
+
+" theme and background
+source ~/.config/nvim/colors.vim
+
+source ~/.config/nvim/statusline.vim
+
+source ~/.config/nvim/abrev.vim
+
+lua << EOF
+require 'packages'
+require("luasnip/loaders/from_vscode").lazy_load()
+require('nvim-ts-autotag').setup()
+require "lsp"
+-- require "statusline"
+require "treesitter"
+require "mapping"
+EOF
